@@ -9,8 +9,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author juan pablo sanchez gaitan
- * 27 de enero del 2020
+ * @author Santiago Fernández Becerra Enero 27 2020
  */
 public class MiPrimerPrograma {
 
@@ -18,86 +17,84 @@ public class MiPrimerPrograma {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       // bienvenida();
-        tablasdemultiplicar();
-        /*miteclado();
-
-        mipromedio();*/
-
+        
+        //metodo1();
+        
+        tablasMultiplicar();
+        
+        //cicloWhile();
+        
+        //maxMin();
+        
     }
 
-    private static void mipromedio() {
-        int[] edades = {3, 5, 6, 7, 10};
-        float promedio;
-        int maxi = -1;
-        int mini = 9999;
-        int aux = 0;
-        int tam = 0;
+    private static void maxMin() {
+        
+        int [] edades = {3, 5, 6, 7, 10};
+        int max=-1, min=9999999, aux = 0;
+        float prom;
         for (int i = 0; i < edades.length; i++) {
-            aux = aux + edades[i];
-            if (mini > edades[i]) {
-                mini = edades[i];
+            aux=aux+edades[i];
+            if(max<edades[i]){
+                max=edades[i];
             }
-            if (maxi < edades[i]) {
-                maxi = edades[i];
+            if(min>edades[i]){
+                min=edades[i];
             }
-
-            tam++;
         }
-        promedio = aux / tam;
-
-        System.out.println("el promedio es: " + promedio);
-        System.out.println("el minimo es : " + mini);
-        System.out.println("el maximo es:" + maxi);
+        System.out.println("Mayor "+max);
+        System.out.println("Menor "+min);
+        prom = (aux/edades.length);
+        System.out.println("Promedio es "+prom);
     }
 
-    private static void miteclado() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("teclea algo loca:");
-        String loca = sc.nextLine();
-        System.out.println("Mi " + loca.toUpperCase());
-        boolean sigue = true;
-        while (sigue) {
+    private static void cicloWhile() {
+        String val = "SI";
+        
+        Scanner in = new Scanner(System.in);
+        
+        while(val.equals("SI")){
+            
+            System.out.println(">>");
 
-            System.out.println("desea continuar?");
-            String continuar = sc.nextLine();
-            if (continuar.equals("si")) {
+            String tec = in.nextLine();
 
-                String pendejo = sc.nextLine();
-                System.out.println("Mi " + pendejo.toUpperCase());
-            }
-            if (continuar.equals("no")) {
-
-                sigue = false;
-            }
+            System.out.println("mayuscula: "+tec.toUpperCase());
+            
+            System.out.println("¿Desea continuar?:");
+            
+            val = in.nextLine();
         }
     }
 
-    private static void tablasdemultiplicar() {
-        int multi;
-        for (int x = 1; x < 10; x++) {
-            System.out.println("La tabla del " + x);
-            for (int j = 1; j < 11; j++) {
-
-                multi = x * j;
-                System.out.println("la multiplicacion :" + multi);
+    private static void tablasMultiplicar() {
+        int x;
+        int y;
+        
+        for(x=1;x<11;x++){
+            System.out.println("Tabla del "+x);
+            for (y = 1; y < 11; y++) {
+                System.out.println(x+"x"+y+"="+(x*y));
             }
-            System.out.println("---------------------");
-
-        }
+            System.out.println("--------");
+        } 
     }
 
-    private static void bienvenida() {
+    private static void metodo1() {
         // TODO code application logic here
-        int x = 2, y = 3;
-        int suma;
-        suma = x + y;
-        System.out.println("bienvenido la suma es esta " + suma);
-        x = 0;
-        if (x > 0) {
-
-            System.out.println("la division es:" + (y / x));
+        System.out.println("Bienvenido");
+        
+        int x = 2;
+        int y = 3;
+        int suma = x + y;
+        
+        System.out.println("hola " + suma);
+        
+        x=0;
+        
+        if(x > 0){
+            System.out.println("Division es " + (y/x));
         }
     }
-
+    
 }
