@@ -5,35 +5,43 @@
  */
 package entidades;
 
+
 /**
  *
  * @author aulasingenieria
  */
 public class Cliente {
-    
-    private int documento;
-    private String nombre;
     private Cuenta esPropiedad;
+    private Cuenta beneficia;
+    private int Documento;
+    private String nombre;
     private Cliente autorizado;
 
-    public Cliente(int documento, String nombre) {
-        this.documento = documento;
-        this.nombre = nombre;
+  
+    public String cuentanombre ()
+    {
+        return getEsPropiedad().getNumero();
+    }
+    public Cliente getAutorizado() {
+        return autorizado;
     }
 
-    public int getDocumento() {
-        return documento;
+    public void setAutorizado(Cliente autorizado) {
+        this.autorizado = autorizado;
+    }
+    
+    public Cuenta getBeneficia() {
+        return beneficia;
     }
 
-    public void setDocumento(int documento) {
-        this.documento = documento;
+    public void setBeneficia(Cuenta beneficia) {
+        this.beneficia = beneficia;
     }
+  
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
+    public Cliente( int Documento, String nombre) {
+       
+        this.Documento = Documento;
         this.nombre = nombre;
     }
 
@@ -45,20 +53,22 @@ public class Cliente {
         this.esPropiedad = esPropiedad;
     }
 
-    public Cliente getAutorizado() {
-        return autorizado;
+    
+
+    public int getDocumento() {
+        return Documento;
     }
 
-    public void setAutorizado(Cliente autorizado) {
-        this.autorizado = autorizado;
+    public void setDocumento(int Documento) {
+        this.Documento = Documento;
     }
-    
-    public String numCuenta(int doc){
-        if(doc==this.documento){
-            return esPropiedad.getNumero();
-        }else{
-            return "No se puede completar el proceso";
-        }
+
+    public String getNombre() {
+        return this.nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
     
 }

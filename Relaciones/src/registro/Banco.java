@@ -4,10 +4,8 @@
  * and open the template in the editor.
  */
 package registro;
-
 import entidades.Cliente;
 import entidades.Cuenta;
-
 /**
  *
  * @author aulasingenieria
@@ -18,44 +16,34 @@ public class Banco {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Cliente cli = new Cliente(100,"j");
+        Cliente cli2 = new Cliente(200,"k");
+        Cuenta cta1 = new Cuenta (5000,"C99");
+        Cuenta cta2 = new Cuenta (8000,"C80");
+        cli.setEsPropiedad(cta1); // respuesta de la pregunta A
+        cli.setBeneficia(cta2); // esta es la respuesta de la B 
+        cli.setBeneficia(cta1); // esta es la respuesta de la d 6
+        cli2.setAutorizado(cli); // esta es la respueta de la C
+        cta1.setDueno(cli);
+        cta2.setDueno(cli2);
+        
+        System.out.println(cta1.getDueno().getNombre()); //respuesta de la pregunta d.1
+        System.out.println(cli.cuentanombre());//respuesta de la pregunta d 2
+        System.out.println(cta2.nombreClienteBeneficiario()); //respuesta de la pregunta d 3
+        if (cta1.nombreClienteBeneficiario()!= null)
+        {
+            System.out.println("No tiene beneficiario"); //respuesta a la pregunta d 4
+        }
+        System.out.println(cli.getBeneficia().getNumero()); // respuesta a la pregunta d 5
+        System.out.println(cta1.nombreautorizado()); //respuesta de la pregunta d 7
+        
+        
+        
+        
+        
+        
+        
         // TODO code application logic here
-        //a
-        Cliente cl = new Cliente(100, "J");
-        Cuenta cu = new Cuenta("C99", 5000);
-        cl.setEsPropiedad(cu);
-        cu.setDueno(cl);
-        //b
-        Cuenta cu2 = new Cuenta("C80", 8000);     
-        cu2.setBeneficiaA(cl);
-        //c
-        Cliente cl2 = new Cliente(200, "K");
-        cl.setAutorizado(cl2);
-        //d i
-        System.out.println("El usuario de cuenta: "+cu.getNumero()+" es de nombre: "+cu.getDueno().getNombre());
-        //d ii
-        System.out.println("El usuario de documento: "+cl.getDocumento()+" es de numero de cuenta: "+cl.numCuenta(100));
-        //d iii
-        System.out.println("El usuario de de cuenta: "+cu2.getNumero()+" beneficia a: "+cu2.nomBen("C80"));
-        //d iv
-        if(cu.benefi("C99")!=null){
-            System.out.println("El usuario de de cuenta: "+cu.getNumero()+" beneficia a: "+cu.benefi("C99"));
-        }else{
-            System.out.println("No tiene beneficiario");
-        }
-        //d v
-        if(cl.getEsPropiedad().getBeneficiaA()!=null){
-            System.out.println("El nombre del beneficiario de: "+cl.getNombre()+ " es: "+cl.getEsPropiedad().getBeneficiaA().getNombre());
-        }else{
-            System.out.println("No tiene beneficiario");
-        }
-        //d vi
-        cu.setBeneficiaA(cl);
-        //d vii
-        if(cu.au().getNombre()!=null){
-            System.out.println("El nombre del autorizado es: "+cu.au().getNombre());
-        }else{
-            System.out.println("No hay autorizado");
-        }
     }
     
 }

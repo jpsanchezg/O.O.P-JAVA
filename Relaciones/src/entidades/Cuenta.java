@@ -10,31 +10,32 @@ package entidades;
  * @author aulasingenieria
  */
 public class Cuenta {
-    
-    private String numero;
-    private int saldo;
+
     private Cliente dueno;
-    private Cliente beneficiaA;
+    private Cliente beneficiario;
+    private int Saldo;
+    private String Numero;
 
-    public Cuenta(String numero, int saldo) {
-        this.numero = numero;
-        this.saldo = saldo;
+    public String nombreautorizado() {
+        return getDueno().getNombre();
     }
 
-    public String getNumero() {
-        return numero;
+    public String nombreClienteBeneficiario() {
+        return getDueno().getNombre();
     }
 
-    public void setNumero(String numero) {
-        this.numero = numero;
+    public Cliente getBeneficiario() {
+        return beneficiario;
     }
 
-    public int getSaldo() {
-        return saldo;
+    public void setBeneficiario(Cliente beneficiario) {
+        this.beneficiario = beneficiario;
     }
 
-    public void setSaldo(int saldo) {
-        this.saldo = saldo;
+    public Cuenta(int Saldo, String Numero) {
+
+        this.Saldo = Saldo;
+        this.Numero = Numero;
     }
 
     public Cliente getDueno() {
@@ -45,31 +46,20 @@ public class Cuenta {
         this.dueno = dueno;
     }
 
-    public Cliente getBeneficiaA() {
-        return beneficiaA;
+    public int getSaldo() {
+        return Saldo;
     }
 
-    public void setBeneficiaA(Cliente beneficiaA) {
-        this.beneficiaA = beneficiaA;
+    public void setSaldo(int Saldo) {
+        this.Saldo = Saldo;
     }
-    
-    public String nomBen(String numC){
-        if(numC.equals(this.numero)){
-            return beneficiaA.getNombre();
-        }else{
-            return "No se puede completar el proceso";
-        }
+
+    public String getNumero() {
+        return Numero;
     }
-    
-    public Cliente benefi(String numC){
-        if(numC.equals(this.numero)){
-            return this.beneficiaA;
-        }else{
-            return null;
-        }
+
+    public void setNumero(String Numero) {
+        this.Numero = Numero;
     }
-    
-    public Cliente au(){
-        return this.getDueno().getAutorizado();
-    }
+
 }
