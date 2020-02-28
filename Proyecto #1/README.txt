@@ -4,7 +4,7 @@ Juan Pablo Sanchez Gaitan
 
 Jose Daniel Niño
 
-Santiago Fernandez
+Santiago Fernández
 
-El proyecto consiste en realizar un programa en java con la tematica Kiosco dispensador de Libros
+El proyecto consiste en realizar un programa en java con la tematica Kiosco dispensador de Libros.
 
